@@ -2,5 +2,5 @@
 # git config --global user.name "mouhameddiouf"
 # git config credential.helper store
 git add .
-git commit -m "comprendre.md"
+git commit -m "net-tools"
 git push

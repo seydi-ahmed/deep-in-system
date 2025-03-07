@@ -23,5 +23,8 @@ Pendant l'installation d'ubuntu server
 - /home : 5G
 - /backup : 6G
 
+## Suivre les étapes
+Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt install net-tools```
+
 ## Configuration reéseau
 1) Définir une adresse ip statique
