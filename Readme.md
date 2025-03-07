@@ -22,3 +22,6 @@ Pendant l'installation d'ubuntu server
 - / (root) : 15G
 - /home : 5G
 - /backup : 6G
+
+## Configuration reéseau
+1) Définir une adresse ip statique
