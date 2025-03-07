@@ -63,5 +63,15 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
     - sudo ufx status
 
 ## Gestion des utilisateurs
+1) Luffy:
+- créer l'utilisateur
+    - sudo adduser luffy
+- ajouter luffy au groupe sudo
+    - sudo usermod -aG sudo luffy
+- générer une paire de clés ssh sur l'ordinateur local (pas le serveur)
+    - ssh-keygen -t rsa -b 4096 -C "luffy@samaserver"
+- copier la clé publique sur le serveur
+    - ssh-copy-id -i ~/.ssh/id_rsa.pub luffy@11.11.90.149 -p 2222
+
 ## Installation des services
 ## Configuration des sauvegardes
