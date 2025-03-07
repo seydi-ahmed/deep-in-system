@@ -28,3 +28,16 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
 
 ## Configuration reéseau
 1) Définir une adresse ip statique
+- regarder le fichier de configuration par défaut dans /etc/netplan
+- modifier le fichier
+    - sudo nano /etc/netplan/50-cloud-init.yaml (ou peu importe le nom du fichier)
+    - ajouter l'adresse ip voulu(avec le masque), le gateway et le serveur
+    - quitter
+    - sudo netplan apply (pour appliquer le changement)
+- tester
+    ping google.com
+
+## Sécurisation du serveur
+## Gestion des utilisateurs
+## Installation des services
+## Configuration des sauvegardes

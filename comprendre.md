@@ -1,3 +1,5 @@
+10.0.2.15
+
 1. Configuration du réseau
 
 Tu dois configurer une adresse IP statique pour ton serveur.
