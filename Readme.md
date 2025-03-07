@@ -6,4 +6,11 @@
 - Préparer une machine virtuelle avec 30GB de disque
 
 2) Création de la VM
-- 
+- Ouvrir VirtualBox
+- Configuration de la VM:
+    - 2 CPU
+    - 4 Go de Ram
+    - 30 Go de stockage de disque dur
+    - Mode réseau: NAT
+
+3) Partitionnement du disque
