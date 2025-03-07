@@ -12,5 +12,13 @@
     - 4 Go de Ram
     - 30 Go de stockage de disque dur
     - Mode réseau: NAT
+    - user: diouf
+    - usermane: diouf
+    - hostname: diouf-host
 
 3) Partitionnement du disque
+Pendant l'installation d'ubuntu server
+- /swap : 4G      
+- / (root) : 15G
+- /home : 5G
+- /backup : 6G
