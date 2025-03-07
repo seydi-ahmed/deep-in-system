@@ -34,10 +34,34 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
     - ajouter l'adresse ip voulu(avec le masque), le gateway et le serveur
     - quitter
     - sudo netplan apply (pour appliquer le changement)
-- tester
-    ping google.com
+2) tester
+- ping google.com
 
 ## Sécurisation du serveur
+1) Désactiver la connextion root à distance via ssh
+- sudo nano /etc/ssh/sshd_config
+- changer la ligne 1 par la ligne 2
+    - ligne 1: #PermitRootLogin prohibit-password
+    - ligne 2: PermitRootLogin no
+- redémarrer ssh
+    - sudo systemctl restart ssh
+
+2) Changer le port ssh
+- dans le même fichier, changer le port en 2222
+
+3) Configurer le pare-feu (UFW)
+- installer ufw
+    - sudo apt update
+    - sudo apt install ufw
+- autoriser le port ssh et les ports nécessaires (http, ftp, ...)
+    - sudo ufw allow 2222/tcp
+    - sudo ufw allow 80/tcp (pour http)
+    - sudo ufw allow 21/tcp (pour ftp)
+- activer le pare-feu
+    - sudo ufw enable
+- vérifier l'état du pare-feu
+    - sudo ufx status
+
 ## Gestion des utilisateurs
 ## Installation des services
 ## Configuration des sauvegardes
