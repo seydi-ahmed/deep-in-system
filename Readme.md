@@ -137,3 +137,7 @@ echo "Backup successful at $(date)" >> /var/log/backup.log
 - sudo crontab -e
 - met ceci:
     - 0 0 * * * /usr/local/bin/backup.sh
+
+## Développeur:
+- Prénom NOM: Mouhamed DIOUF
+- email: seydiahmedelcheikh@gmail.com
