@@ -116,8 +116,24 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
 - sudo mv wordpres/* .
 - sudo rm -rf wordpress latest.tar.gz
 - configurer
-    - sudo nano wp-config.php
+    - sudo nano wp-config-sample.php
     - remplir les infos de la base de données (nom, utilisateur, mot de passe)
 
 
 ## Configuration des sauvegardes
+1) Créer un script de sauvegarde
+- sudo nano /usr/local/bin/backup.sh
+- y mettre ceci
+```
+#!/bin/bash
+DATE=$(date +%Y-%m-%d)
+mysqldump -u wpuser -p'password' wordpress > /backup/wordpress-$DATE.sql
+echo "Backup successful at $(date)" >> /var/log/backup.log
+```
+2) Rendre le script exécutable
+- sudo chmod +x /usr/local/bin/backup.sh
+
+3) Ajouter une tâche cron
+- sudo crontab -e
+- met ceci:
+    - 0 0 * * * /usr/local/bin/backup.sh
