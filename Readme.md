@@ -80,4 +80,20 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
     - sudo adduser zoro
 
 ## Installation des services
+1) Installer vsftpd
+- sudo apt update
+- sudo apt install vsftpd
+2) Ouvrir le fichier de configuration
+- sudo nano etc/vsftpd.conf
+- modifier les lignes suivantes
+    - anonymou_enable=NO
+    - local_enable=YES
+    - write_enable=NO
+3) Créer l'utilisateur nami
+- sudo adduser nami
+4) Restreindre l'accés de nami au dossier backup
+- sudo usermod -d /backup nami
+- sudo chown root:root /backup
+- sudo chmod 755 /backup
+
 ## Configuration des sauvegardes
