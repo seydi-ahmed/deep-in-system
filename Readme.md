@@ -70,8 +70,14 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
     - sudo usermod -aG sudo luffy
 - générer une paire de clés ssh sur l'ordinateur local (pas le serveur)
     - ssh-keygen -t rsa -b 4096 -C "luffy@samaserver"
+- clé générée
+    - ``````
 - copier la clé publique sur le serveur
     - ssh-copy-id -i ~/.ssh/id_rsa.pub luffy@11.11.90.149 -p 2222
+
+2) zoro:
+- créer l'utilisateur zoro
+    - sudo adduser zoro
 
 ## Installation des services
 ## Configuration des sauvegardes
