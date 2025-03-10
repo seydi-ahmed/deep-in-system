@@ -136,7 +136,7 @@ echo "Backup successful at $(date)" >> /var/log/backup.log
 3) Ajouter une tâche cron
 - sudo crontab -e
 - met ceci:
-    - 0 0 * * * /usr/local/bin/backup.sh
+    - ```0 0 * * * /usr/local/bin/backup.sh```
 
 ## Développeur:
 - Prénom NOM: Mouhamed DIOUF
