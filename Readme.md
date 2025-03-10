@@ -68,12 +68,11 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
     - sudo adduser luffy
 - ajouter luffy au groupe sudo
     - sudo usermod -aG sudo luffy
+- aller dans mon ordi perso (celui de luffy)
 - générer une paire de clés ssh sur l'ordinateur local (pas le serveur)
     - ssh-keygen -t rsa -b 4096 -C "luffy@samaserver"
-- clé générée
-    - ``````
 - copier la clé publique sur le serveur
-    - ssh-copy-id -i ~/.ssh/id_rsa.pub luffy@11.11.90.149 -p 2222
+    - ssh-copy-id -i ~/.ssh/id_rsa.pub -p2222 luffy@11.11.90.149
 
 2) zoro:
 - créer l'utilisateur zoro
@@ -109,20 +108,21 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
     - exit;
 
 6) Installer apache, php et wordpress 
-- sudo apt install apache2 php libapache2-mod-php php-mysql
-- cd /var/www/html
-- sudo wget https://wordpress.org/latest.tar.gz
-- sudo tar -xvzf latest.tar.gz
-- sudo mv wordpres/* .
-- sudo rm -rf wordpress latest.tar.gz
+- ```sudo apt install apache2 php libapache2-mod-php php-mysql```
+- ```cd /var/www/html```
+- ```sudo wget https://wordpress.org/latest.tar.gz```
+- ```sudo tar -xvzf latest.tar.gz```
+- ```sudo mv wordpres/* .```
+- ```sudo rm -rf wordpress latest.tar.gz```
 - configurer
-    - sudo nano wp-config-sample.php
+    - ```sudo nano wp-config-sample.php```
     - remplir les infos de la base de données (nom, utilisateur, mot de passe)
+- password pour wordpress: 7cNiDUH)9)tRn!v@0c
 
 
 ## Configuration des sauvegardes
 1) Créer un script de sauvegarde
-- sudo nano /usr/local/bin/backup.sh
+- ```sudo nano /usr/local/bin/backup.sh```
 - y mettre ceci
 ```
 #!/bin/bash
@@ -131,7 +131,7 @@ mysqldump -u wpuser -p'password' wordpress > /backup/wordpress-$DATE.sql
 echo "Backup successful at $(date)" >> /var/log/backup.log
 ```
 2) Rendre le script exécutable
-- sudo chmod +x /usr/local/bin/backup.sh
+- ```sudo chmod +x /usr/local/bin/backup.sh```
 
 3) Ajouter une tâche cron
 - sudo crontab -e
