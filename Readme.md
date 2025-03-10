@@ -96,4 +96,28 @@ Aprés avoir redémarrer la machine, installer le nécessaire avec ```sudo apt i
 - sudo chown root:root /backup
 - sudo chmod 755 /backup
 
+5) Installer et Sécuriser MySQL
+- sudo apt install mysql-server
+- sudo mysql_secure_installation
+- créer un utilisateur mysql pour wordpress
+    - sudo mysql -u root -p
+    - create database wordpress;
+    - create user "wpuser@localhost" identified by "wpuser";
+        - le mot de passe est "dioufWPUSER/7"
+    - grant all privileges on wordpress.* to "wpuser@localhost";
+    - flush privileges;
+    - exit;
+
+6) Installer apache, php et wordpress 
+- sudo apt install apache2 php libapache2-mod-php php-mysql
+- cd /var/www/html
+- sudo wget https://wordpress.org/latest.tar.gz
+- sudo tar -xvzf latest.tar.gz
+- sudo mv wordpres/* .
+- sudo rm -rf wordpress latest.tar.gz
+- configurer
+    - sudo nano wp-config.php
+    - remplir les infos de la base de données (nom, utilisateur, mot de passe)
+
+
 ## Configuration des sauvegardes
