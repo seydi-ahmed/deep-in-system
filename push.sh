@@ -2,5 +2,5 @@
 # git config --global user.name "mouhameddiouf"
 # git config credential.helper store
 git add .
-git commit -m "sh1 file"
+git commit -m "sha1 file"
 git push
