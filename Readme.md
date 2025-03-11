@@ -138,6 +138,48 @@ echo "Backup successful at $(date)" >> /var/log/backup.log
 - met ceci:
     - ```0 0 * * * /usr/local/bin/backup.sh```
 
+## Questions / Réponses
+1) sudo group en linux
+- c'est un groupe qui permet d'exécuter des commandes avec des priviléges administrateurs
+2) netplan
+- il configure le réseau de la machine
+    - enp0S3: interface réseau utilisé
+    - addresses: adresse ip fixe de la machine
+    - routes: le gateway qui permet d'accéder à d'autres réseaux
+    - nameserves: définit les serveurs DNS
+3) netmask:
+- il définit quelle partie de l'adresse ip correspond aux réseaux et quelle partie correspond aux machines
+4) ip static:
+- permet aux utilisateurs d'accéder aux serveurs sans interruption
+- nécessaire pour les services qui utilise tout le temps le serveur
+5) ssh secure
+- sudo cat /etc/ssh/sshd_config
+- port 2222 pour plus de sécurité
+- accés à root via ssh désactivé
+6) le serveur et son rôle
+- il permet de se connecter à distance de maniére sécurisée
+- gérer un serveur à distance
+7) ports ouverts
+- 2222 pour avoir accés à ssh
+- 80 pour utiliser le service web
+- 21 pour le ftp
+- 40K / 50K pour le ftp en mode passif
+8) ftp
+- mode actif: le serveur initie une connexion vers le client
+- mode passif: le client initie une connexion vers le serveur
+9) MySQL
+- fermé pour des raisons de sécurité. n'est utilisé que par le serveur (wordpress)
+10) firewall:
+- il contrôle le trafic réseau entrant et sortant
+- filtre les accés pour assurer la sécurité
+11) cronjob
+- une tâche planifiée qui s'exécute à des intervalles de temps réguliers
+- automatiser les tâches répétitives
+12) crontab:
+- c'est le fichier qui permet de gérer les cronjobs
+13) backup
+- protége contre les pertes de données, les attaques etc.
+
 ## Développeur:
 - Prénom NOM: Mouhamed DIOUF
 - email: seydiahmedelcheikh@gmail.com
